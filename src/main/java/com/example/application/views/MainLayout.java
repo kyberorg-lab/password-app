@@ -29,7 +29,7 @@ import com.vaadin.flow.component.tabs.TabsVariant;
 import com.vaadin.flow.router.RouterLink;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.router.PageTitle;
-import com.vaadin.flow.server.PWA;
+import com.vaadin.flow.server.*;
 import com.vaadin.flow.theme.Theme;
 import com.example.application.views.MainLayout;
 import com.example.application.views.helloworld.HelloWorldView;
@@ -42,7 +42,17 @@ import com.vaadin.flow.component.avatar.Avatar;
 @PWA(name = "Password App", shortName = "Password App", enableInstallPrompt = false)
 @Theme(themeFolder = "passwordapp")
 @PageTitle("Main")
-public class MainLayout extends AppLayout {
+public class MainLayout extends AppLayout implements PageConfigurator {
+
+    @Override
+    public void configurePage(InitialPageSettings initialPageSettings) {
+        // Force login page to use Shady DOM to avoid problems with browsers and
+        // password managers not supporting shadow DOM
+        initialPageSettings.addInlineWithContents(
+                InitialPageSettings.Position.PREPEND, "window.customElements=window.customElements||{};"
+                        + "window.customElements.forcePolyfill=true;" + "window.ShadyDOM={force:true};",
+                InitialPageSettings.WrapMode.JAVASCRIPT);
+    }
 
     public static class MenuItemInfo {
 

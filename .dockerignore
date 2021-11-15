@@ -1,0 +1,4 @@
+# Ignore everything
+**
+# But JAR should stay
+!target/passwordApp.jar
