@@ -29,10 +29,12 @@ public class MainLayout extends AppLayout implements PageConfigurator {
     public void configurePage(InitialPageSettings initialPageSettings) {
         // Force login page to use Shady DOM to avoid problems with browsers and
         // password managers not supporting shadow DOM
+        /*
         initialPageSettings.addInlineWithContents(
                 InitialPageSettings.Position.PREPEND, "window.customElements=window.customElements||{};"
                         + "window.customElements.forcePolyfill=true;" + "window.ShadyDOM={force:true};",
                 InitialPageSettings.WrapMode.JAVASCRIPT);
+                */
     }
 
     public static class MenuItemInfo {
