@@ -1,5 +1,6 @@
 package com.example.application.views;
 
+import com.example.application.views.about.LoginOverlayView;
 import com.example.application.views.about.SignUpView;
 import com.example.application.views.helloworld.FieldsView;
 import com.vaadin.flow.component.Component;
@@ -118,6 +119,7 @@ public class MainLayout extends AppLayout implements PageConfigurator {
                 new MenuItemInfo("Fields Example", "la la-globe", FieldsView.class), //
 
                 new MenuItemInfo("Login Form", "la la-file", SignUpView.class), //
+                new MenuItemInfo("Login Overlay Form", "la la-file", LoginOverlayView.class), //
 
         };
         List<RouterLink> links = new ArrayList<>();
