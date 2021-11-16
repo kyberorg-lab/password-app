@@ -6,7 +6,7 @@ import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 
-@PageTitle("Sign Up")
+@PageTitle("Login Form")
 @Route(value = "login", layout = MainLayout.class)
 public class SignUpView extends LoginForm {
 
