@@ -1,7 +1,7 @@
 package com.example.application.views;
 
 import com.example.application.views.about.SignUpView;
-import com.example.application.views.helloworld.HelloWorldView;
+import com.example.application.views.helloworld.FieldsView;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.applayout.AppLayout;
 import com.vaadin.flow.component.applayout.DrawerToggle;
@@ -113,7 +113,7 @@ public class MainLayout extends AppLayout implements PageConfigurator {
 
     private List<RouterLink> createLinks() {
         MenuItemInfo[] menuItems = new MenuItemInfo[]{ //
-                new MenuItemInfo("Hello World", "la la-globe", HelloWorldView.class), //
+                new MenuItemInfo("Fields Example", "la la-globe", FieldsView.class), //
 
                 new MenuItemInfo("Login Form", "la la-file", SignUpView.class), //
 
