@@ -3,6 +3,7 @@ package com.example.application.views;
 import com.example.application.views.about.LoginOverlayView;
 import com.example.application.views.about.SignUpView;
 import com.example.application.views.helloworld.FieldsView;
+import com.example.application.views.shadowdom.ShadowDomView;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.applayout.AppLayout;
 import com.vaadin.flow.component.applayout.DrawerToggle;
@@ -30,12 +31,10 @@ public class MainLayout extends AppLayout implements PageConfigurator {
     public void configurePage(InitialPageSettings initialPageSettings) {
         // Force login page to use Shady DOM to avoid problems with browsers and
         // password managers not supporting shadow DOM
-        /*
         initialPageSettings.addInlineWithContents(
                 InitialPageSettings.Position.PREPEND, "window.customElements=window.customElements||{};"
                         + "window.customElements.forcePolyfill=true;" + "window.ShadyDOM={force:true};",
                 InitialPageSettings.WrapMode.JAVASCRIPT);
-                */
     }
 
     public static class MenuItemInfo {
@@ -120,6 +119,7 @@ public class MainLayout extends AppLayout implements PageConfigurator {
 
                 new MenuItemInfo("Login Form", "la la-file", SignUpView.class), //
                 new MenuItemInfo("Login Overlay Form", "la la-file", LoginOverlayView.class), //
+                new MenuItemInfo("Fields w Shadow Dom", "la la-globe", ShadowDomView.class), //
 
         };
         List<RouterLink> links = new ArrayList<>();
